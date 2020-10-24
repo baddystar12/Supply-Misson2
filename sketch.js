@@ -33,7 +33,7 @@ function setup() {
 	box2 = createSprite(200, 620, 20, 100);
 	box2.shapeColor = "red";
 	box3 = createSprite(600, 620, 20, 100);
-	box3.shapeColor = "red";
+	box3.shapeColor = "blue";
 
 	engine = Engine.create();
 	world = engine.world;

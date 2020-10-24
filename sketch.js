@@ -42,9 +42,9 @@ function setup() {
 	}
   var package_options={
 	  restitution: 1,
-	  isStatic:true
+	  isStatic:false
   }
-
+ 
 	packageBody = Bodies.circle(width/2 , 200 , 5, package_options );
 	World.add(world, packageBody);
 	

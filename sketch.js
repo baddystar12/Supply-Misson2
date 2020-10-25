@@ -41,8 +41,7 @@ function setup() {
 		isStatic:true
 	}
   var package_options={
-	  restitution: 1,
-	  isStatic:false
+	isStatic: true
   }
  
 	packageBody = Bodies.circle(width/2 , 200 , 5, package_options );
@@ -66,9 +65,18 @@ function draw() {
 	rectMode(CENTER);
     packageSprite.x = packageBody.position.x;
 	packageSprite.y = packageBody.position.y;
+	if(keyDown("LEFT")){
+		helicopterSprite.x = helicopterSprite.x - 10;
+		translation = {x:-10, y:0};
+		Matter.Body.translate(packageBody, translation);
+	}
+	if(keyDown("RIGHT")){
+		helicopterSprite.x = helicopterSprite.x+10;
+		translation = {x:+10, y:0};
+		Matter.Body.translate(packageBody, translation);
+	}
     drawSprites();
 	if(keyDown("DOWN")){
-	Matter.Body.setStatic(packageBody, true);
-}
- 
+	Matter.Body.setStatic(packageBody, false);
+} 
 }
